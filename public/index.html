@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Markdown 预览</title>
+    <style>
+      body { font: 16px/1.6 system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
+      textarea { width: 100%; height: 120px; font: inherit; padding: 8px; box-sizing: border-box; }
+      #preview { border: 1px solid #ddd; padding: 12px; min-height: 80px; margin-top: 12px; }
+      button { margin-top: 8px; padding: 6px 16px; }
+    </style>
+  </head>
+  <body>
+    <h1>Markdown 预览</h1>
+    <textarea id="input">增长 10~20%，**重点**内容，~~作废~~的句子。</textarea>
+    <button id="save">保村</button>
+    <div id="preview"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
