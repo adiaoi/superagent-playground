@@ -10,8 +10,12 @@ test('单个波浪号不是删除线', () => {
   assert.equal(renderInline('增长 10~20%'), '增长 10~20%');
 });
 
+test('同一行出现两个单波浪号也不该被划掉', () => {
+  assert.equal(renderInline('增长 10~20% 到 30~40%'), '增长 10~20% 到 30~40%');
+});
+
 test('粗体与斜体', () => {
-  assert.equal(renderInline('**重点**和*提示*'), '<strong>重点</strong>和<em>提示</em>');
+  assert.equal(renderInline('**重点**和*提示*'), '**重点**和*提示*'.replace('**重点**', '<strong>重点</strong>').replace('*提示*', '<em>提示</em>'));
 });
 
 test('整篇渲染保留空行', () => {
